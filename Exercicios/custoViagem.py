@@ -20,4 +20,4 @@ litros = distancia / consumo_carro
 custo_total = litros * preco_combustivel
 
 # Exibindo resultado final
-print(f'Custo total da viagem: {custo_total:.2f}')
+print(f'Custo total da viagem: R$ {custo_total:.2f}')
