@@ -4,11 +4,11 @@
 
 def Calculadora(x, y, n):
     r = 0
-    if n == '1':
+    if n == '1': # Multiplicação
         r = x * y
-    elif n == '2':
+    elif n == '2': # Adição
         r = x + y
-    elif n == '3':
+    elif n == '3': # Subtração
         r = x - y 
     else:
         print('Operação inválida!')

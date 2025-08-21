@@ -1,6 +1,6 @@
 num1 = int(input('Digite um valor: '))
-num2 = int(input('Digite um valor: ')) 
 op = str(input('Digite a operação: '))
+num2 = int(input('Digite um valor: ')) 
 
 match op:
     case '+':
@@ -17,6 +17,6 @@ match op:
             print(r)
     case '*':
         r = num1 * num2
+        print(r)
     case _:
         print('Opção inválida.')
-    
