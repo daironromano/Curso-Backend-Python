@@ -1,7 +1,10 @@
+from random import randint
+
 print('=== JOGO DE ADIVINHAÇÃO === ')
+print('ESCOLHA O NÚMERO DE 1 A 20')
 
 palpite = 0
-num_secreto = 48
+num_secreto = randint(1, 20)
 
 while palpite != num_secreto:
     palpite_str = input('Qual seu palpite: ')
