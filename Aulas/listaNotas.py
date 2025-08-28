@@ -1,4 +1,4 @@
-notas = [7, 8, 10, 5, 4.5, 3.5, 7.5, 6.5]
+notas = [7.3, 8.6, 10.0, 5.3, 4.5, 3.5, 7.5, 6.5]
 
 media = 7
 aprovado = reprovado = soma_notas = 0
@@ -15,5 +15,5 @@ for nota in notas:
 media_simples = soma_notas/len(notas)
 print(f'TOTAL APROVADOS: {aprovado}')
 print(f'TOTAL REPROVADOS: {reprovado}')
-print(f'MÉDIA: {resultado_media}')
+print(f'MÉDIA: {media_simples}')
 
