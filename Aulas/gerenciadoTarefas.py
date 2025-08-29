@@ -6,12 +6,16 @@ def add_tarefa(tarefas):
 def listar_tarefas(tarefas):
     for i, tarefa in enumerate(tarefas, start=0):
         print(f'{i}ª, {tarefa}')
+        
+def marcar_concluida(tarefas):
+    listar_tarefas(tarefas)
 
-def marcar_concluida():
-    pass
+    num = int(input('Qual tarefa marcar: '))
+    tarefas[num - 1]['concluida'] = True
+    print(f'Tarefa {num} concluída!')
 
 def sair():
-    pass
+    return False
 
 def main():
     tarefas = []
@@ -25,4 +29,9 @@ def main():
     continuar = True
     while continuar:
         print(opcao)
-    escolha = input('Qual a sua escolha: ')
+        escolha = input('Qual a sua escolha: ')
+        funcoes = opcao.get(escolha)
+        if funcoes:
+            if funcoes(tarefas) == False:
+                continuar == False
+
