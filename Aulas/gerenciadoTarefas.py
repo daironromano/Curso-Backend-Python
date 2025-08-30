@@ -36,7 +36,8 @@ def main():
 
     continuar = True
     while continuar:
-        print(opcao)
+        print(f'==== Menu ====')
+        print(f'1) Adicionar Título \n2) Listar Tarefas \n3) Marcar Concluído \n4) Sair')
         escolha = input('Qual a sua escolha: ')
         funcao_escolhida = opcao.get(escolha)
         if funcao_escolhida:
