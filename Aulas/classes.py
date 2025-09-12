@@ -19,7 +19,7 @@ class ContaBancaria:
     def sacar(self, valor):
         if valor > 0 and valor <= (self.saldo + self.limite):
             self.saldo -= valor
-            self.transacoes.append(f"Saque de R${valor:.2f } realizado!")
+            self.transacoes.append(f"Saque de R${valor:.2f} realizado!")
             return "Seu saque foi realizado com sucesso!"
         else:
             return "Valor do saque indisponível!"
@@ -31,6 +31,6 @@ class ContaBancaria:
 contaDairon = ContaBancaria("001", "Dairon", 2000)
 contaFilite = ContaBancaria("002", "Filite", 1500, 2100)
 
-print(contaDairon.depositar(600))
+print(contaDairon.sacar(5000))
 print(contaDairon.consultar_saldo())
-
+print(contaDairon.transacoes)
