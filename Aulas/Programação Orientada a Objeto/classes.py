@@ -1,3 +1,10 @@
+"""
+APRENDENDO CONCEITOS DE PROGRAMAÇÃO ORIENTADA A OBJETO
+Atributo = caracteristicas
+Métodos = ações
+objetos = instâncias da classe
+
+"""
 class ContaBancaria:
     # Caracteríticas = Atributos
     def __init__(self, numero, titular, saldo=0, limite=1200):

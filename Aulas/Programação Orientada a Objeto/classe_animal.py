@@ -1,3 +1,8 @@
+"""
+Utilizando conceitos de abstração
+
+"""
+
 class Animal:
     def __init__(self, nome, idade, peso):
         self.nome = nome
@@ -11,7 +16,7 @@ class Animal:
             self.fome += 10
             print(f'{self.nome} está comendo!')
         else:
-            return f'O animal foi de arrasta!'
+            print( f'O animal foi de arrasta!')
 
     def dormir(self):
         if self.vivo:
@@ -28,10 +33,12 @@ class Animal:
 
     def emitir_som(self):
         if self.vivo:
-            return f'{self.nome} emite um som'
+            print(f'{self.nome} emite um som') 
         else:
-            return f'{self.nome} não pode emitir som'
+            print(f'{self.nome} não pode emitir som')
             
 animal = Animal("João", 150, 52.6)
 print(animal.nome)
-animal.dormir()
+animal.emitir_som() # usando print
+mover = animal.mover() #usando return
+print(mover)
