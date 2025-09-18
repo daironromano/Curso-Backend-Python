@@ -1,3 +1,7 @@
+"""
+Engenharia de software em conjunto com programação orientada a objeto
+"""
+
 class Produto():
 
     def __init__(self, nome: str, preco: float, estoque: int):
