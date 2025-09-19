@@ -39,6 +39,5 @@ class Animal:
             
 animal = Animal("João", 150, 52.6)
 print(animal.nome)
-animal.emitir_som() # usando print
-mover = animal.mover() #usando return
-print(mover)
+animal.emitir_som() # usando print no método
+print(animal.mover()) #usando return
