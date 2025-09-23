@@ -1,3 +1,7 @@
+"""
+
+"""
+
 # Menu
 print('='*40)
 print(f'{"PLANEJADOR DE VIAGENS":^40}')
@@ -13,7 +17,7 @@ while True:
         break
 preco_combustivel = float(input('Preço [R$]: '))
 
-# Calcula a quantidade de combustível ncessária
+# Calcula a quantidade de combustível necessária
 litros = distancia / consumo_carro
 
 # Calcula o custo total da viagem

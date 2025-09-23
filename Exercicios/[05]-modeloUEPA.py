@@ -1,3 +1,9 @@
+"""
+Neste exercício foram abordados conceitos de programação orientada a objeto, tal como:
+Abstração: Esconder a parte complexa da aplicação
+Herança: Classes herdam atributos e métodos das outras classses (pai)
+"""
+
 class MembroUEPA:
     def __init__(self, nome, matricula, email):
         self.nome = nome
