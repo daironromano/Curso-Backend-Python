@@ -14,8 +14,13 @@ class ProdutoFisico(Produto):
         super().__init__(nome, preco_base)
         self.custo_frete = custo_frete
 
+    def calcular_preco_final(self):
+        return self.preco_base + self.custo_frete
+
 class ProdutoDigital(Produto):
     def __init__(self, nome, preco_base, taxa_servico):
         super().__init__(nome, preco_base)
         self.taxa_servico = taxa_servico
 
+    def calcular_preco_final(self):
+        return self.preco_base + self.taxa_servico
