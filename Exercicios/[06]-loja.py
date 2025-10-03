@@ -6,7 +6,7 @@ class Produto(ABC):
         self.preco_base = preco_base
 
     @abstractmethod
-    def calcular_preco_final():
+    def calcular_preco_final(self):
         pass
 
 class ProdutoFisico(Produto):
@@ -24,3 +24,19 @@ class ProdutoDigital(Produto):
 
     def calcular_preco_final(self):
         return self.preco_base + self.taxa_servico
+
+# Saída Esperada
+p1 = ProdutoFisico("Livro Python", 50, 15)
+p2 = ProdutoFisico("Caneca", 30, 10)
+p3 = ProdutoDigital("E-book Django", 40, 5)
+p4 = ProdutoDigital("Curso Online", 200, 20)
+
+carrinho = [p1, p2, p3, p4]
+
+total = 0
+for produto in carrinho:
+    preco_final = produto.calcular_preco_final()
+    print(f"{produto.nome}: R$ {preco_final:.2f}")
+    total += preco_final
+
+print(f"\nValor total da compra: R$ {total:.2f}")
