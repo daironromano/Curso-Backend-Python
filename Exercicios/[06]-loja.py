@@ -26,17 +26,33 @@ class ProdutoDigital(Produto):
         return self.preco_base + self.taxa_servico
 
 # Saída Esperada
-p1 = ProdutoFisico("Livro Python", 50, 15)
-p2 = ProdutoFisico("Caneca", 30, 10)
-p3 = ProdutoDigital("E-book Django", 40, 5)
-p4 = ProdutoDigital("Curso Online", 200, 20)
-
-carrinho = [p1, p2, p3, p4]
-
+carrinho = []
 total = 0
+while True:
+    tipo = input('[F] - Produto Físico\n[D] - Produto Digital\n[P] - Parar de gastar!\nOpção Escolhida: ').upper()
+    if tipo == 'P':
+        break
+
+    nome = input('Nome do produto: ')
+    preco = float(input('Preço: '))
+
+    if tipo == 'F':
+        frete = float(input('Valor do frete: '))
+        produto = ProdutoFisico(nome, preco, frete)
+    elif tipo == 'D':
+        frete = float(input('Taxa de serviço: '))
+        produto = ProdutoDigital(nome, preco, frete)
+    else:
+        print('Opção Inválida!')
+        continue
+    #Adicionando produtos a lista de carrinho    
+    carrinho.append(produto)
+
+print('\n')
+
 for produto in carrinho:
     preco_final = produto.calcular_preco_final()
-    print(f"{produto.nome}: R$ {preco_final:.2f}")
+    print(f'{produto.nome}: R$ {preco_final:.2f}')
     total += preco_final
 
-print(f"\nValor total da compra: R$ {total:.2f}")
+print(f'\nValor total: {total:.2f}')
