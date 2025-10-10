@@ -8,21 +8,21 @@ class Personagem(ABC):
 
     def receber_dano(self, dano):
         self._vida -= dano
-        if self._vida < 0: # CORREÇÃO: Usar _vida
-            self._vida = 0 # CORREÇÃO: Usar _vida
+        if self._vida < 0:
+            self._vida = 0
         print(f'{self.nome} recebeu {dano} de dano.\n Vida restante: {self._vida}')
     
     def esta_vivo(self):
         return self._vida > 0
 
     @abstractmethod
-    def atacar(self, alvo): # CORREÇÃO: Adicionar self
+    def atacar(self, alvo):
         pass
 
 class Guerreiro(Personagem):
     def __init__(self, nome, vida, ataque_base, furia_inicial=50):
         super().__init__(nome, vida, ataque_base)
-        self.__furia = furia_inicial # CORREÇÃO: Usar furia_inicial
+        self.__furia = furia_inicial
 
     def atacar(self, alvo):
         dano = self._ataque_base
@@ -36,14 +36,14 @@ class Guerreiro(Personagem):
         if self.__furia >= custo_furia:
             self.__furia -= custo_furia
             print(f'{self.nome} executa um ATAQUE ESPECIAL! (-{custo_furia} de Fúria)')
-            alvo.receber_dano(dano_extra) # CORREÇÃO: Aplicar o dano
+            alvo.receber_dano(dano_extra)
         else:
             print(f'{self.nome} não tem fúria suficiente')
 
 class Mago(Personagem):
     def __init__(self, nome, vida, ataque_base, mana_inicial=75):
         super().__init__(nome, vida, ataque_base)
-        self.__mana = mana_inicial # CORREÇÃO: Usar mana_inicial
+        self.__mana = mana_inicial
 
     def atacar(self, alvo):
         custo_mana = 15
@@ -52,11 +52,12 @@ class Mago(Personagem):
         if self.__mana >= custo_mana:
             self.__mana -= custo_mana
             print(f'{self.nome} lança uma magia em {alvo.nome}! (-{custo_mana} de Mana)')
-            alvo.receber_dano(dano_magia) # CORREÇÃO: Aplicar o dano da magia
+            alvo.receber_dano(dano_magia)
         else:
-            print(f'{self.nome} está sem mana suficiente para lançar a magia.') # CORREÇÃO: Mensagem de erro
+            print(f'{self.nome} está sem mana suficiente para lançar a magia.')
 
-# Simulação da Batalha 
+
+#SIMULAÇÃO DE BATALHA
 
 guerreiro = Guerreiro("Conan, o Bárbaro", 100, 15)
 mago = Mago("Merlin, o Enigmático", 70, 20)
