@@ -7,7 +7,7 @@ print('='*40)
 print(f'{"PLANEJADOR DE VIAGENS":^40}')
 print('='*40)
 
-# Solicita dados ao usuários
+# Solicita dados dos usuários
 distancia = float(input('Distância [KM/H]: '))
 while True: 
     consumo_carro = float(input('Consumo [KM/L]: '))

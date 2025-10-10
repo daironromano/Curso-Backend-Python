@@ -1,5 +1,4 @@
 # cadastro_alunos.py
-
 def cadastrar(alunos):
     nome = input('Digite seu nome: ')
     curso = input('Digite seu curso: ')
