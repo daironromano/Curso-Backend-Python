@@ -17,14 +17,38 @@ class Playlist:
         self.nome = nome
         self._musicas = []
 
-    def __str__(self):
-        pass
+    def adicionar_musica(self, musica: Musica):
+        self._musicas.append(musica)
+        print(f'Música {musica.titulo} adicionada à playlist {self.nome}')
+
     def __repr__(self):
-        pass
+        return f"Playlist (nome={self.nome}, {self._musicas})"
+    
+    def __str__(self):
+        total_musicas = len(self._musicas)
+        return f"Playslist: {self.nome}\nQtde de músicas: {total_musicas}"
+    
     def __len__(self):
-        pass
-    def __getitem__(self):
-        pass
+        return len(self._musicas)
+
+    def __getitem__(self, index):
+        return self._musicas[index]
+    
+    def __add__(self, other):
+        if not isinstance(other, Playlist):
+            return NotImplemented # Indica que não é possível somar
+        
+        #criando nova playlist
+        novo_nome = f"Mix: {self.nome} + {other.nome}"
+        nova_playlist = Playlist(novo_nome)
+
+        #adicionar músicas
+        for musicas in self._musicas:
+            nova_playlist._musicas.append(musicas)
+
+        for outra_musica in other:
+            nova_playlist._musicas.append(outra_musica)
+
 
 musica1 = Musica('Vai malandra', 'Anitta', '2:30')
 print(musica1)
