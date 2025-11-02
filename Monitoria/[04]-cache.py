@@ -3,6 +3,7 @@ import time
 
 _cache_simples = {} # [chave]: valor
 
+# decorador manual
 def cachear (func_original):
     @functools.wraps(func_original)
     def wrapper(*args, **kwargs):
