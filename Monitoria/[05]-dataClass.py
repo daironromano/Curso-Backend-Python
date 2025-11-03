@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-@dataclass(frozen=True) # Torna a classe imutável
+@dataclass() # frozen=True -> Torna a classe imutável
 class AlunoData:
     nome: str
     matricula: int
