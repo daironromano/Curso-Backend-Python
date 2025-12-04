@@ -1,7 +1,7 @@
 import mysql.connector
 from abc import ABC, abstractmethod
 
-class DatabaseReceiver:
+class DatabaseReceiver: # Receiver
     def __init__(self):
         self.config = {
             'host':'localhost',
@@ -10,5 +10,8 @@ class DatabaseReceiver:
             'database': 'cinestream_db',
 
         }
+
+# Classes concretas ->
+# Envoker ->
 
 banco = DatabaseReceiver()
