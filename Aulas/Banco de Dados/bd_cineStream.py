@@ -4,7 +4,7 @@ from typing import List, Tuple
 
 # 1. Receiver 
 
-class DatabaseReceiver:
+class DatabaseReceiver: # Receiver
     def __init__(self):
         self.config = {
             'host':'localhost',
@@ -117,3 +117,10 @@ if __name__ == "__main__":
     app.registrar('3', cmd_sair)
 
     app.rodar()
+
+        }
+
+# Classes concretas ->
+# Envoker ->
+
+banco = DatabaseReceiver()
