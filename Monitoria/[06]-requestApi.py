@@ -58,3 +58,4 @@ if __name__ == "__main__":
     user = fetch_user_by_id(1)
     print(user)
     print(f'Tempo: {time.perf_counter() - start:.2f}')
+
