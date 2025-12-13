@@ -118,7 +118,6 @@ if __name__ == "__main__":
 
     app.rodar()
 
-        }
 
 # Classes concretas ->
 # Envoker ->
