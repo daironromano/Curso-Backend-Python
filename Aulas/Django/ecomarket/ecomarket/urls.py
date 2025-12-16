@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from loja.views import pagina_inicial, detalhe_produto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', pagina_inicial, name='pagina_inicial' ),
+    path('produto/<int:produto_id>/', detalhe_produto, name='detalhe_produto'),
 ]
