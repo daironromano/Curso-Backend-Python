@@ -25,7 +25,7 @@ class ItemPedidoInline(admin.TabularInline):
     extra = 1
     autocomplete_fields = ['prato']
     
-@admin.register(Pedido)
+@admin.register(Pedido) 
 class PedidoAdmin(admin.ModelAdmin):
     list_display = ('id', 'cliente_nome', 'status', 'data_pedido', 'atendente')
     
@@ -42,3 +42,16 @@ class PedidoAdmin(admin.ModelAdmin):
             'fields': ('status', 'data_pedido', 'atendente')
         }),
     )
+    
+    @admin.action(description='Marcar pedidos como entregues')
+    def marcar_como_entregue(self, request, queryset):
+        atualizados = queryset.update(status='ENTREGUE')
+        
+        self.message_user(
+            request,
+            f'{atualizados} pedidos foram marcados como entregues.',
+            messages.SUCCESS
+        )
+        
+    actions = [marcar_como_entregue]
+    
