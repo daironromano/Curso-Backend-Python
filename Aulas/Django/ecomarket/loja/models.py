@@ -14,6 +14,8 @@ class Produto(models.Model):
         return self.nome
     
     
-    
+def __main__():
+    produto = Produto('laranja', 45.4, '-', 'Dairon')
+    produto.save(commit=True)
     
     
