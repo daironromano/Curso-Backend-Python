@@ -8,7 +8,9 @@ from .forms import EspectadorForm
 
 # Sessão do carrinho
 def adicionar_ao_pedido(request, filme_id):
+    # Criando sessão
     sacola = request.session.get('ingressos_selecionados', {})
+
     filme_id_str = str(filme_id)
     sacola[filme_id_str] = sacola.get(filme_id_str, 0) + 1
     request.session['ingressos_selecionados'] = sacola
@@ -28,7 +30,7 @@ def ver_sacola(request):
     total = 0
 
     for f_id, qtd in sacola.items():
-        filme = get_object_or_404(Filme, pk=f_id)
+        filme = get_object_or_404(Filmes, pk=f_id)
         subtotal = filme.preco * qtd
         total += subtotal
         filmes_obj.append({ 'filme': filme,
@@ -55,7 +57,19 @@ def index(request):
     filmes = Filmes.objects.all()
     qtd = len(request.session.get('ingressos_selecionados', {}))
     return render(request,
-                  'index.html'
+                  'index.html',
                   {'filme': filmes,
                     'qtd': qtd})
 
+
+@login_required
+def finalizar_pedido(request):
+    sacola = request.session.get('ingressos_selecionados', {})
+    if not sacola:
+        messages.error(request, 'Sua sacola está vazia!')
+        return redirect('index')
+
+    del request.session['ingressos_selecionados']
+    request.session.modified = True
+    return redirect('index')
+    
