@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
 
-urlpatters = [
+urlpatterns = [
     path('', views.index, name='index'),
     path('add/<int:filme_id>/', views.adicionar_ao_pedido, name='add_pedido'),
     path('sacola/', views.ver_sacola, name='sacola'),
