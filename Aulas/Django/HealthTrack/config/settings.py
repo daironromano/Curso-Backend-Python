@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rb85d&%@&n#3o650kp(2)*q5d)uh7o^pu&0^(1)s43^-b1m-c-'
+SECRET_KEY = 'django-insecure-%oqmqj#!32!)-9o*7tb!8u^x0ra)sm%=^u9ltc%8-+7e80_^da'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'atendimentos',
+    'rest_framework',
 ]
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# Armazenamento do tempo em segundos para os cookies
+SESSION_COOKIE_AGE = 1800 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,5 +124,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_URL = 'accounts/login'
-LOGIN_REDIRECT_URL = '/'
